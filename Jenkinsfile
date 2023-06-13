@@ -1,25 +1,24 @@
 pipeline {
     agent any
-
     stages {
         stage('Hello') {
             steps {
-                echo 'Hi, it is me, Mario!!'
+                echo 'I am inside Hello step'
             }
         }
         stage('Build') {
             steps {
-                echo 'Now I am connecting our pipes'
+                echo 'I am inside Build step'
             }
         }
         stage('Test') {
             steps {
-                echo 'Now I going to test if we have some leaks'
+                echo 'I am inside Test step'
             }
         }
         stage('Release') {
             steps {
-                echo 'It is done!! I am the pipeline king!!'
+                echo 'I am inside Release step'
             }
         }
     }
