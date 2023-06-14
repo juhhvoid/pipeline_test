@@ -1,14 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('Hello') {
+        stage('Build Image') {
             steps {
-                echo 'I am inside Hello step'
-            }
-        }
-        stage('Build') {
-            steps {
-                echo 'I am inside Build step'
+                script {
+                    dockerapp = docker.build("leonardo/api-test", '-f ./src/Dockerfile ./src')
+                }
             }
         }
         stage('Test') {
