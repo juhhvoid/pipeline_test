@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('Build Image') {
             steps {
-                script {
-                    dockerapp = docker.build("leonardo/api-test", '-f ./src/Dockerfile ./src')
-                }
+                echo 'I am inside Build step'
             }
         }
         stage('Test') {
